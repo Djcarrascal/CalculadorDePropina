@@ -3,28 +3,23 @@
 nombre = input("\nIngrese su nombre: ")
 while True:
     try:
-       precio = int(input("\nIngrese el valor de su compra: "))
+       precio = float(input("\nIngrese el valor de su compra: "))
        break
     except ValueError:
-        print("\nERROR.Solo se pueden ingresar numeros enteros")
-
-        
+        print("\nERROR.Solo se pueden ingresar numeros enteros")        
 
 #Aqui definimos que el valor debe calcular la propina segun el valor de la compra:
 
-total1 = precio * 0.10
-total2 = precio * 0.15
-total3 = precio * 0.20
-
-
 if precio < 20:
-    print(f"\nEl valor de su compra con propia es de: {precio + total1}\n")          
-if precio >= 20 and precio < 50:
-    print(f"\nEl valor de su compra con propia es de: {precio + total2}\n")
-if precio >= 50:
-    print(f"\nEl valor de su compra con propia es de: {precio + total3}\n")
+    propina = precio * 0.10
+elif precio >= 20 and precio < 50:
+    propina = precio * 0.15
+else:
+    propina = precio * 0.20
 
+#Aqui realizamos los prints que mostará el detalle de la compra
 print("\nResumen de la compra")
 print("\nCliente: ", nombre)
 print("Valor bruto: ", precio)
-print("Propina: ", )
+print("Propina: ", propina)
+print("Valor total: ", precio + propina)
